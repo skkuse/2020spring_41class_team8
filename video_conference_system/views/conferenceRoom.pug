@@ -5,10 +5,11 @@ head
   script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
   script(src='https://meet.jit.si/external_api.js')
   script.
+    var urlSplit = document.URL.split('=');
     $(document).ready(function(){
     const domain = 'meet.jit.si';
     const options = {
-    roomName: 'JuniorTimbersSendPersonally',
+    roomName: urlSplit[1],
     width: 1400,
     height: 700,
     parentNode: document.querySelector('#meet')
@@ -16,3 +17,5 @@ head
     const api = new JitsiMeetExternalAPI(domain, options);
     });
 #meet
+
+

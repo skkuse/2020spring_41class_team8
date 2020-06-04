@@ -14,6 +14,5 @@ Check the server at the address below.
 ```bash
 main page: localhost:3000
 roomName page: localhost:3000/roomName
-url page: localhost:3000/url
 conferenceRoom page: localhost:3000/conferenceRoom
 ```

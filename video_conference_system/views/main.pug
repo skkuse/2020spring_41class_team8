@@ -3,9 +3,14 @@ html
         title= title
         link(rel='stylesheet', href='/stylesheets/style.css')
         link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css', integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk", crossorigin="anonymous")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.13.0/css/all.css", integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V", crossorigin="anonymous")
     body
-        h1 main page
-        a(href='/roomName') Room create
-        br
-        a(href='/roomName') Convert Audio to text(Not implemented)
+        h1 Main page
+        section(id="mainMenu")
+            span
+                i(class="fas fa-video")
+                a(href='/roomName') Create a room
+            span
+                i(class="fas fa-sync-alt")
+                a(href='/roomName') Convert Audio to text(Not implemented)
 

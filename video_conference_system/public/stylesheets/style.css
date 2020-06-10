@@ -11,10 +11,18 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 1rem;
+}
+
+#navbar-section {
+  margin-bottom: 5rem;
+}
+
+#navbar-section .navbar-header {
+  font-size: 2rem;
+}
+
+#navbar-section .fas {
+  font-size: 2rem;
 }
 
 #mainMenu {
@@ -26,6 +34,18 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+#mainMenu h1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+#mainMenu p {
+  font-size: 1.5rem;
 }
 
 #mainMenu a {

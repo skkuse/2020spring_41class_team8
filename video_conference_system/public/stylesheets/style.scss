@@ -1,0 +1,99 @@
+$fontSize: 1rem;
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+
+$primary:       $blue;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$dark:          $gray-800;
+$light:         $gray-100;
+
+
+$theme-colors: 
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "dark":       $dark,
+    "light":      $light
+  );
+
+html {
+    font-size: $fontSize;
+
+}
+
+body {
+    max-width: 1500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+#mainMenu {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    a {
+        text-decoration: none;
+        color: $dark;
+        font-size: 1.2rem;
+        padding: 0.5rem 0.5rem 0 0.5rem;
+        &:hover {
+            padding-left: 1rem;
+            padding-right: 0;
+        }
+    }
+
+    .fas {
+        color: $primary;
+    }
+
+
+}
+
+#roomNameInput-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    form{
+        display: flex;
+        flex-direction: column;
+        > * {
+            margin: 0.1rem;
+        }
+    }
+
+
+}
+
+

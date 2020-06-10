@@ -7,8 +7,12 @@ import shutil
 
 
 class Speech_to_Text:
-	def __init__(self, segment_length=5):
+	def __init__(self, language, segment_length=5):
 		self.recognizer = sr.Recognizer()
+		if language == 'English':
+			self.mode = 'en-US'
+		elif language == 'Korean':
+			self.mode = 'ko'
 		self.segment_length = segment_length
 
 	def __call__(self, file_path, output_file):
@@ -59,7 +63,7 @@ class Speech_to_Text:
 		with sr.AudioFile(segment_file) as source:
 			audio_text = self.recognizer.listen(source)
 			try:
-				text = self.recognizer.recognize_google(audio_text)
+				text = self.recognizer.recognize_google(audio_text, language=self.mode)
 				print(text)
 				return text
 			except:
@@ -151,7 +155,5 @@ def get_filename(file_path):
 
 
 if __name__ == '__main__':
-	stt = Speech_to_Text()
+	stt = Speech_to_Text('English')
 	stt('How we teach computers to understand pictures - Fei Fei Li.mp3', 'tmp.txt')
-	# stt('SampleVideo_360x240.mp4')
-	# stt('hello.wav')

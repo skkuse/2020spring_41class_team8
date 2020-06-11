@@ -14,4 +14,17 @@ router.get('/conferenceRoom', function(req, res, next) {
   res.render('conferenceRoom', { title: 'conferenceRoom' });
 });
 
+router.get('/index', function(req, res, next) {
+  res.render('index', { title: 'index'});
+});
+
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'login'});
+});
+
+router.get('/register', function(req, res, next) {
+  res.render('register', { title: 'register'});
+});
+
+
 module.exports = router;

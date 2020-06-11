@@ -1,0 +1,21 @@
+html
+    include ../includes/header
+    body
+        include ../includes/navbar
+        section(id="login-section")
+            h1 Login
+            form(action="/login" method="post")
+                div.form-group
+                    label Username
+                    input.form-control(type="text" name="username")
+                div.form-group
+                    label Password
+                    input.form-control(type="password" name="password")
+                div.form-group
+                    label.rememberMe-label Remember Me
+                        input.rememberMe-checkbox(type="checkbox" name="remember" value="on")
+                button.btn.btn-success.btn-lg Login
+                a.btn.btn-primary.btn-lg.mt-1(href="/register") Register
+            
+
+                

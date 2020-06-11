@@ -66,6 +66,59 @@ body {
     }
 }
 
+#index-section {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-self:center;
+    align-items: center;
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    a{
+        margin: 0.5rem 1rem;
+    }
+}
+
+#login-section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 1rem;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+    .rememberMe-label {
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        align-items: center;
+    }
+    .rememberMe-checkbox {
+        height:20px;
+        width:20px;
+        vertical-align:middle;
+        margin: 0 0.5rem;
+    }
+
+}
+
+#register-section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 1rem;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
+
 #mainMenu {
     display: flex;
     flex-direction: column;

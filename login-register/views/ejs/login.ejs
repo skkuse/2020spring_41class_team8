@@ -1,0 +1,48 @@
+<!-- views/login.ejs -->
+<!doctype html>
+<html>
+<head>
+	<title>Login Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+</head>
+<body>
+    <div class="container mt-4">
+			<div class="row align-self-center justify-content-center">
+        <div class="col-md-4 col-sm-12 jumbotron text-center">
+            <h1> Login</h1>
+
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+
+            <!-- LOGIN FORM -->
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="form-group">
+                    <label>Remember Me <input type="checkbox" style="height:20px;width:20px;vertical-align:middle" name="remember" value="on"></label>
+
+                </div>
+
+                <button type="submit" class="btn btn-warning btn-lg">Login</button>
+            </form>
+
+            <hr>
+<!--Navigation routes to other pages -->
+						<div class="d-inline-block">
+	            <a href="/register" class="btn btn-primary">Register</a>
+	            <a href="/" class="btn btn-secondary">Home</a>
+						</div>
+        </div>
+			</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+	<title>Register Page</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+</head>
+<body>
+<div class="container mt-4">
+	<div class="row  align-self-center justify-content-center">
+			<div class="col-md-4 col-sm-12 jumbotron text-center">
+
+				<h1> Register</h1>
+
+				<!-- show any messages that come back with authentication -->
+				<% if (message.length > 0) { %>
+					<div class="alert alert-danger"><%= message %></div>
+				<% } %>
+
+				<!-- REGISTER FORM -->
+				<form action="/register" method="post">
+					<div class="form-group">
+						<label>Username</label>
+						<input type="text" class="form-control" name="username">
+					</div>
+					<div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password">
+					</div>
+					<div class="form-group">
+						<label>Confirm Password</label>
+						<input type="password" class="form-control" name="confirm">
+					</div>
+
+					<button type="submit" class="btn btn-warning btn-lg">Register Now</button>
+				</form>
+
+				<hr>
+			<!--Navigation routes to other pages -->
+				<div class="d-inline-block">
+					<a class="btn btn-primary" href="/login">Login</a>
+					<a class="btn btn-secondary" href="/">Home</a>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

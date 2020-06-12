@@ -38,8 +38,9 @@ router.post('/upload', function (req, res, next) {
     console.log('done..');
     console.log(data.toString());
 
-    downloadpath = "" + data.toString()
-    downloadpath = downloadpath.replace(' ', '')
+	console.log('debug')
+    downloadpath = data.toString()
+    // downloadpath = downloadpath.replace(' ', '')
     downloadpath = downloadpath.replace('\r', '')
     downloadpath = downloadpath.replace('\n', '')
 

@@ -229,13 +229,14 @@ def get_filename(file_path):
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
+    engkor = sys.argv[2]
     # lang = sys.argv[2]
-    if len(sys.argv) != 2:
+#if len(sys.argv) != 3:
     # if len(sys.argv) != 3:
-        print("Insufficient arguments")
-        sys.exit()
+# print("Insufficient arguments")
+#       sys.exit()
     
     # stt = Speech_to_Text(lang)
-    stt = Speech_to_Text('English') 
+    stt = Speech_to_Text(engkor) 
     stt(file_path)
     print(stt.file_name + '.txt')

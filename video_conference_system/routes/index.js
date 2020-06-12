@@ -31,7 +31,7 @@ router.post('/upload', function (req, res, next) {
   }
   res.set('Content-Type', 'text/html');
   const { spawn } = require('child_process');
-  const pyProg = spawn('python3', ["audio2text.py", filepath]);
+  const pyProg = spawn('python3', ["audio2text.py", filepath, "English"]);
   pyProg.stdout.on('data', function (data) {
     console.log(data.toString());
 
@@ -64,6 +64,56 @@ router.post('/upload', function (req, res, next) {
   });
 });
 
+router.post('/uploadkorean', function (req, res, next) {
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+  let media = req.files;
+  let filepath = "files/" + req.files['imageupload']['name'];
+  for (let pos in media) {
+    media[pos].mv(filepath, (err) => {
+      if (err) {
+        return res.status(500).json({
+          ok: false,
+          err
+        });
+      }
+    });
+  }
+  res.set('Content-Type', 'text/html');
+  const { spawn } = require('child_process');
+  const pyProg = spawn('python3', ["audio2text.py", filepath, "Korean"]);
+  pyProg.stdout.on('data', function (data) {
+    console.log(data.toString());
+
+    console.log('done..');
+    console.log(data.toString());
+
+	console.log('debug')
+    downloadpath = data.toString()
+    // downloadpath = downloadpath.replace(' ', '')
+    downloadpath = downloadpath.replace('\r', '')
+    downloadpath = downloadpath.replace('\n', '')
+
+    var fileName = downloadpath;
+	console.log(fileName);
+    var filePath = path.join(__dirname, "../", fileName);
+	var text = fs.readFileSync(filePath, 'utf8');
+    fs.writeFile(filePath, text, function (err) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log('Done');
+        res.download(filePath, fileName, function (err) {
+          console.log('download callback called');
+          if (err) {
+            console.log('something went wrong');
+          }
+        });
+      }
+    });
+  });
+});
 router.get('/conferenceRoom', function (req, res, next) {
   res.render('conferenceRoom', { title: 'conferenceRoom' });
 });

@@ -10,6 +10,7 @@ html
                 a(href='/roomName') Create a meeting
             span
                 i(class="fas fa-sync-alt")
-                a(href='/roomName') Convert Audio to text(Not implemented)
+                form(method='post', enctype='multipart/form-data', action="/upload")
+                    input(type='file', name='imageupload' id="file")
+                    input(type='submit')
 
-                

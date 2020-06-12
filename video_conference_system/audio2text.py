@@ -236,6 +236,6 @@ if __name__ == "__main__":
         sys.exit()
     
     # stt = Speech_to_Text(lang)
-    stt = Speech_to_Text("English") 
+    stt = Speech_to_Text('English') 
     stt(file_path)
-    print(stt.file_name + '.txt")
+    print(stt.file_name + '.txt')

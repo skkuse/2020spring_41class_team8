@@ -3,11 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+let url =  "mongodb://localhost:27017/dalhav";
+mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
+
+var app = express();
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-var app = express();
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const Session = require('express-session');
+const flash = require('connect-flash');
+var MongoDBStore = require('connect-mongodb-session')(Session);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,5 +50,29 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+app.use(flash());
+
+//세션
+var store = new MongoDBStore({//세션을 저장할 공간
+    uri: url,//db url
+    collection: 'sessions'//콜렉션 이름
+});
+
+store.on('error', function(error) {//에러처리
+    console.log(error);
+});
+
+app.use(Session({
+    secret:'dalhav', //세션 암호화 key
+    resave:false,//세션 재저장 여부
+    saveUninitialized:true,
+    rolling:true,//로그인 상태에서 페이지 이동 시마다 세션값 변경 여부
+    cookie:{maxAge:1000*60*60},//유효시간
+    store: store
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 module.exports = app;

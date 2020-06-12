@@ -46,7 +46,7 @@ class Speech_to_Text:
         connected_text = self.connect(text_segments)
 
         # write the final script to output file
-        write_script(connected_text)
+        write_script(connected_text, self.file_name)
 
         # remove temporary directory built
         shutil.rmtree(self.segment_dir)
@@ -214,7 +214,7 @@ class Speech_to_Text:
 
 # write the output script file from a string text
 def write_script(script, output_file):
-    text_file = open(output_file, "w")
+    text_file = open(output_file + '.txt', "w")
     text_file.write(script)
     text_file.close()
 

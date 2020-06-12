@@ -228,15 +228,15 @@ def get_filename(file_path):
     return file_name
 
 if __name__ == "__main__":
-    #file_path = sys.argv[1]
-    #if len(sys.argv) != 2:
-    #    print("Insufficient arguments")
-    #    sys.exit()
-    #print(file_path)
+    file_path = sys.argv[1]
+    if len(sys.argv) != 2:
+        print("Insufficient arguments")
+        sys.exit()
+    print(file_path)
         
     stt = Speech_to_Text("English") 
     # stt = Speech_to_Text('Korean')
-    stt("files/a.mp3", "tmp.txt")
+    stt(file_path, "tmp.txt")
     # stt('[날씨] 내일도 더위 이어져…오후부터 차차 전국 비 - KBS뉴스(News).mp4', 'weather.txt')
     # stt('SampleVideo_360x240.mp4')
     # stt('hello.wav')

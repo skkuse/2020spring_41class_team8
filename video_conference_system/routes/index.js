@@ -31,7 +31,7 @@ router.post('/upload', function (req, res, next) {
   }
   res.set('Content-Type', 'text/html');
   const { spawn } = require('child_process');
-  const pyProg = spawn('python', ["b.py", filepath]);
+  const pyProg = spawn('python', ["audio2text.py", filepath]);
   pyProg.stdout.on('data', function (data) {
     console.log(data.toString());
 

@@ -235,8 +235,4 @@ if __name__ == "__main__":
     print(file_path)
         
     stt = Speech_to_Text("English") 
-    # stt = Speech_to_Text('Korean')
     stt(file_path, "tmp.txt")
-    # stt('[날씨] 내일도 더위 이어져…오후부터 차차 전국 비 - KBS뉴스(News).mp4', 'weather.txt')
-    # stt('SampleVideo_360x240.mp4')
-    # stt('hello.wav')

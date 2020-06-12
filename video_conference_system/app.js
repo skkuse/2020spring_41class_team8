@@ -51,28 +51,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.use(flash());
-
-//세션
-var store = new MongoDBStore({//세션을 저장할 공간
-    uri: url,//db url
-    collection: 'sessions'//콜렉션 이름
-});
-
-store.on('error', function(error) {//에러처리
-    console.log(error);
-});
-
-app.use(Session({
-    secret:'dalhav', //세션 암호화 key
-    resave:false,//세션 재저장 여부
-    saveUninitialized:true,
-    rolling:true,//로그인 상태에서 페이지 이동 시마다 세션값 변경 여부
-    cookie:{maxAge:1000*60*60},//유효시간
-    store: store
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 module.exports = app;

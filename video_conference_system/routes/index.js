@@ -67,6 +67,9 @@ router.post("/login", (req, res, next) => {
                     res.send('<script type="text/javascript">alert("Please check your email or password."); window.location="/login"; </script>');
                 }
             }
+            else{
+                res.send('<script type="text/javascript">alert("Please check your email or password."); window.location="/login"; </script>');
+            }
         });
 });
 

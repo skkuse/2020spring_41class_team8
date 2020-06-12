@@ -232,7 +232,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Insufficient arguments")
         sys.exit()
-    print(file_path)
         
     stt = Speech_to_Text("English") 
     stt(file_path, "tmp.txt")
+	print("tmp.txt")

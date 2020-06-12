@@ -18,7 +18,7 @@ class Speech_to_Text:
         self.segment_length = segment_length
         self.last_idx = 0
 
-    def __call__(self, file_path, output_file):
+    def __call__(self, file_path):
         self.file_path = file_path
 
         if not os.path.exists(self.file_path):
@@ -46,7 +46,7 @@ class Speech_to_Text:
         connected_text = self.connect(text_segments)
 
         # write the final script to output file
-        write_script(connected_text, output_file)
+        write_script(connected_text)
 
         # remove temporary directory built
         shutil.rmtree(self.segment_dir)
@@ -55,6 +55,7 @@ class Speech_to_Text:
     def breakdown(self, segment_length):
         _ms = 1000
         file_name = get_filename(self.file_path)
+        self.file_name = file_name
         cur_dir = os.getcwd()
         tmp_dir = os.path.join(cur_dir, file_name)
         if not os.path.exists(tmp_dir):
@@ -228,10 +229,13 @@ def get_filename(file_path):
 
 if __name__ == "__main__":
     file_path = sys.argv[1]
+    # lang = sys.argv[2]
     if len(sys.argv) != 2:
+    # if len(sys.argv) != 3:
         print("Insufficient arguments")
         sys.exit()
-        
+    
+    # stt = Speech_to_Text(lang)
     stt = Speech_to_Text("English") 
-    stt(file_path, "audio2textfile.txt")
-    print("audio2textfile.txt")
+    stt(file_path)
+    print(stt.file_name + '.txt")

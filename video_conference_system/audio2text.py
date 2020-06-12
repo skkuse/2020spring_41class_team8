@@ -105,7 +105,6 @@ class Speech_to_Text:
     def convert_all(self, _list_of_path):
         _n = len(_list_of_path)
         text = []
-        print("converting...")
         for i in range(_n):
             phrase = self.convert(_list_of_path[i])
             if phrase is not None:
@@ -234,5 +233,5 @@ if __name__ == "__main__":
         sys.exit()
         
     stt = Speech_to_Text("English") 
-    stt(file_path, "tmp.txt")
-    print("tmp.txt")
+    stt(file_path, "audio2textfile.txt")
+    print("audio2textfile.txt")

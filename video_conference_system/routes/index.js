@@ -31,7 +31,7 @@ router.post('/upload', function (req, res, next) {
   }
   res.set('Content-Type', 'text/html');
   const { spawn } = require('child_process');
-  const pyProg = spawn('python', ["audio2text.py", filepath]);
+  const pyProg = spawn('python3', ["audio2text.py", filepath]);
   pyProg.stdout.on('data', function (data) {
     console.log(data.toString());
 
@@ -44,8 +44,10 @@ router.post('/upload', function (req, res, next) {
     downloadpath = downloadpath.replace('\n', '')
 
     var fileName = downloadpath;
+	console.log(fileName);
     var filePath = path.join(__dirname, "../", fileName);
-    fs.writeFile(filePath, data, function (err) {
+	var text = fs.readFileSync(filePath, 'utf8');
+    fs.writeFile(filePath, text, function (err) {
       if (err) {
         console.log(err);
       } else {

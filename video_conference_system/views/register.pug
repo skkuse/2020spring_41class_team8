@@ -4,7 +4,7 @@ html
         include ../includes/navbar
         section(id="register-section")
             h1 Register
-            form(action="/login" method="post")
+            form(action="/register" method="post")
                 div.form-group
                     label Username
                     input.form-control(type="text" name="username")
@@ -15,7 +15,7 @@ html
                     label Confirm Password
                     input.form-control(type="password" name="confirm")
                 button.btn.btn-success.btn-lg Register Now
-                a.btn.btn-primary.btn-lg.mt-1(href="/register") Register
+                a.btn.btn-primary.btn-lg.mt-1(href="/Login") Login
             
 
                 

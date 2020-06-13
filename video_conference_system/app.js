@@ -3,9 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 const fileUpload = require('express-fileupload');
-
 const mongoose = require('mongoose');
 let url =  "mongodb://localhost:27017/dalhav";
 mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -15,16 +13,10 @@ var app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const Session = require('express-session');
-const flash = require('connect-flash');
-var MongoDBStore = require('connect-mongodb-session')(Session);
-
+var app = express();
 
 app.use(fileUpload());
 

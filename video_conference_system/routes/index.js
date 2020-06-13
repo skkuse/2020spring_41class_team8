@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-
 let path = require('path');
 var fs = require('fs');
 const fileUpload = require('express-fileupload');
@@ -9,7 +8,7 @@ const User = require("../models/user");
 const mongoose = require("mongoose");
 
 /* GET home page. */
-router.get('/main', function(req, res, next) {
+router.get('/main', function (req, res, next) {
   res.render('main', { title: 'Main' });
 });
 
@@ -20,7 +19,15 @@ router.get('/roomName', function (req, res, next) {
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'index'});
 });
-  
+
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'login'});
+});
+
+router.get('/register', function(req, res, next) {
+  res.render('register', { title: 'register'});
+});
+
 router.post('/upload', function (req, res, next) {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send('No files were uploaded.');
@@ -42,9 +49,11 @@ router.post('/upload', function (req, res, next) {
   const pyProg = spawn('python3', ["audio2text.py", filepath, "English"]);
   pyProg.stdout.on('data', function (data) {
     console.log(data.toString());
+
     console.log('done..');
     console.log(data.toString());
-	  console.log('debug')
+
+	console.log('debug')
     downloadpath = data.toString()
     // downloadpath = downloadpath.replace(' ', '')
     downloadpath = downloadpath.replace('\r', '')
@@ -168,6 +177,7 @@ router.post("/login", (req, res, next) => {
             }
         });
 });
+
 
 
 module.exports = router;

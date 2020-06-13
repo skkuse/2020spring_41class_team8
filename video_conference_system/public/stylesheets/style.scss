@@ -66,30 +66,86 @@ body {
     }
 }
 
+#index-section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding: 1rem;
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        a {
+            margin: 0.5rem 0;
+        }
+    }
+}
+
+#register-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-self: center;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+#login-section {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-self: center;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 #mainMenu {
     display: flex;
     flex-direction: column;
     padding: 1rem;
     align-self: center;
+    .btn {
+        align-self: center;
+        margin-bottom: 0.5rem;
+        &-text {
+            padding-left: 1rem;
+        }
+
+        &:hover {
+            .btn-icon {
+                color: $light;
+                transition: 0.2s;
+            }
+        }
+    }
+
     h1 {
         align-self: center;
     }
     p {
         font-size: 1.5rem;
     }
-    a {
-        text-decoration: none;
-        color: $dark;
-        font-size: 1.2rem;
-        padding: 0.5rem 0.5rem 0 0.5rem;
-        &:hover {
-            padding-left: 1rem;
-            padding-right: 0;
-        }
+    span {
+        align-self: center;
+        padding: 0.5rem;
     }
-
+    
     .fas {
         color: $primary;
+    }
+
+    form {
+        padding: 1rem;
+        display: flex;
+        div {
+            margin: 0 0.5rem;
+        }
+        button {
+            align-self: center;
+        }
     }
 
 
@@ -109,6 +165,5 @@ body {
     }
 
 
+
 }
-
-

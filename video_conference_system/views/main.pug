@@ -5,16 +5,21 @@ html
         section(id="mainMenu")
             h1 Welcome to ATlantis
             p Start a video meeting and convert its audio into a text file.
-            span
-                i(class="fas fa-video")
-                a(href='/roomName') Create a meeting
-            span
-                i(class="fas fa-sync-alt")
+            a.btn.btn-outline-primary(href="/roomName")
+                span.btn-label
+                    i.fas.fa-video.btn-icon
+                    span.btn-text Create a meeting
+            span or
+            span Convert english or korean audio to text:
+            div
                 form(method='post', enctype='multipart/form-data', action="/upload")
-                    input(type='file', name='imageupload' id="file")
-                    input(type='submit')
-            span
-                i(class="fas fa-sync-alt")
+                    div.custom-file
+                        input.custom-file-input(type='file', name='imageupload' id="file")
+                        label.custom-file-label(for="file") Choose file (english)
+                    button.btn.btn-success Convert
+            div
                 form(method='post', enctype='multipart/form-data', action="/uploadkorean")
-                    input(type='file', name='imageupload' id="file")
-                    input(type='submit')
+                    div.custom-file
+                        input.custom-file-input(type='file', name='imageupload' id="file")
+                        label.custom-file-label(for="file") Choose file (korean)
+                    button.btn.btn-success Convert

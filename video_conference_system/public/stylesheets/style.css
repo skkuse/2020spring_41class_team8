@@ -24,6 +24,79 @@ body {
   font-size: 2rem;
 }
 
+#index-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  padding: 1rem;
+}
+
+#index-section .button-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#index-section .button-group a {
+  margin: 0.5rem 0;
+}
+
+#register-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+#register-section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#login-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+#login-section form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 #mainMenu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -37,6 +110,23 @@ body {
       align-self: center;
 }
 
+#mainMenu .btn {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-bottom: 0.5rem;
+}
+
+#mainMenu .btn-text {
+  padding-left: 1rem;
+}
+
+#mainMenu .btn:hover .btn-icon {
+  color: #f8f9fa;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
 #mainMenu h1 {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -47,20 +137,32 @@ body {
   font-size: 1.5rem;
 }
 
-#mainMenu a {
-  text-decoration: none;
-  color: #343a40;
-  font-size: 1.2rem;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-}
-
-#mainMenu a:hover {
-  padding-left: 1rem;
-  padding-right: 0;
+#mainMenu span {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0.5rem;
 }
 
 #mainMenu .fas {
   color: #007bff;
+}
+
+#mainMenu form {
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#mainMenu form div {
+  margin: 0 0.5rem;
+}
+
+#mainMenu form button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 #roomNameInput-section {

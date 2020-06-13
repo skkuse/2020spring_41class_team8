@@ -30,12 +30,3 @@ The 'language' should be specified as either `'English'` or `'Korean'`.
 This conversion only supports the following file foramts:
 For video: ```.avi, .mov, .mp4, .ogv, .webm```
 For audio: ```.mp3, .ogg, .wav, .flv, .raw```
-
-# Login, Signup function
-Several modules are required to use this function.
-
-```
-npm install mongoose --save
-npm install body-parser --save
-```
-
